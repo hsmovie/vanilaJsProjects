@@ -1,0 +1,21 @@
+<body>
+  <div class="one">
+    <div class="two">
+      <div class="three">123</div>
+    </div>
+  </div>
+</body>
+
+<script>
+  var divs = document.querySelectorAll('div');
+  divs.forEach(function(div) {
+    div.addEventListener('click', logEvent, {
+      // 캡쳐링으로 설정. default는 false이므로 버블링으로 동작한다.
+      capture: true
+    });
+  });
+
+  function logEvent(event) {
+    console.log(event.currentTarget.className);
+  }
+</script>
